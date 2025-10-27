@@ -103,6 +103,25 @@ data_enquete_A4_fusion <- A4_allinone(data_enquete_A4)
 #View(data_enquete_A4_fusion)
 ################################################################################
 
+################################ Question A5 ###################################
+### Transforme les Hybrides... en Hybrides et raccourcicement des reponses ###
+data_donnee_A5 <- enquete_data_raw
+for (i in 1:492){
+  if (data_donnee_A5$A5_teleravail[i] == "Hybride avec en moyenne un ou deux jours de télétravail / semaine"){
+    data_donnee_A5$A5_teleravail[i] = "Hybride"
+  }
+  else if (data_donnee_A5$A5_teleravail[i] =="Hybride avec en moyenne trois ou quatre jours de télétravail / semaine"){
+    data_donnee_A5$A5_teleravail[i] = "Hybride"
+  }
+  else if (data_donnee_A5$A5_teleravail[i] == "Distanciel complet (pas de travail sur site)"){
+    data_donnee_A5$A5_teleravail[i] = "Distanciel complet"
+  }
+  else if (data_donnee_A5$A5_teleravail[i] == "Présentiel complet (pas ou quasiment pas de travail à distance)"){
+    data_donnee_A5$A5_teleravail[i] = "Présentiel complet"
+  }
+}
+
+################################################################################
 
 ################################ Question A6 ###################################
 
@@ -110,6 +129,7 @@ data_enquete_A6 <- data_enquete_base
 
 #View(data_enquete_A6)
 ################################################################################
+
 
 
 
