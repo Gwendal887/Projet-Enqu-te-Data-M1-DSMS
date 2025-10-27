@@ -181,10 +181,28 @@ function(input, output, session) {
   })
 }
 ################################################################################ 
+####################################   B1   ####################################
+# Cas du logiciel tableau
+fig <- plot_ly(
+  domain = list(x = c(0, 10), y = c(0, 10)),
+  value = sum(data_donnee$B1_utilisation_tableau == "Oui"),
+  title = list(text = "Nombre de personnes utilisant tableau"),
+  type = "indicator",
+  mode = "gauge+number",
+  gauge = list(
+    axis = list(range = list(NULL, 491), tickwidth = 1, tickcolor = "darkblue"),
+    bar = list(color = "darkblue")))
+fig <- fig %>%
+  layout(margin = list(l=20,r=30))
 
+
+fig
+
+################################################################################ 
 
 
 ####################################   B2   ####################################
+
 
 
 ################################################################################ 
